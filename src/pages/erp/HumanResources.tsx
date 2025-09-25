@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, Plus, Calendar, Clock, Award, AlertCircle, TrendingUp, UserCheck, Edit, Trash2 } from 'lucide-react';
+import { Users, Plus, Calendar, Clock, Award, AlertCircle, TrendingUp, UserCheck, CreditCard as Edit, Trash2 } from 'lucide-react';
 
 const HumanResources: React.FC = () => {
   const [employees, setEmployees] = useState([

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Package, Plus, Calendar, DollarSign, MapPin, AlertTriangle, CheckCircle, Edit, Trash2, Wrench } from 'lucide-react';
+import { Package, Plus, Calendar, DollarSign, MapPin, AlertTriangle, CheckCircle, CreditCard as Edit, Trash2, Wrench } from 'lucide-react';
 
 const AssetManagement: React.FC = () => {
   const [assets, setAssets] = useState([

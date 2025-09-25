@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GitBranch, Play, Pause, CheckCircle, Clock, AlertTriangle, Plus, Edit, Trash2, Users } from 'lucide-react';
+import { GitBranch, Play, Pause, CheckCircle, Clock, AlertTriangle, Plus, CreditCard as Edit, Trash2, Users } from 'lucide-react';
 
 const WorkflowModule: React.FC = () => {
   const [workflows, setWorkflows] = useState([

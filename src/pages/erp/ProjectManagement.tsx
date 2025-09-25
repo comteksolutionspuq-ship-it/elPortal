@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Calendar, Users, DollarSign, Clock, CheckCircle, AlertTriangle, BarChart3, Edit, Trash2 } from 'lucide-react';
+import { Plus, Calendar, Users, DollarSign, Clock, CheckCircle, AlertTriangle, BarChart3, CreditCard as Edit, Trash2 } from 'lucide-react';
 
 const ProjectManagement: React.FC = () => {
   const [projects, setProjects] = useState([
