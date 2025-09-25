@@ -17,7 +17,16 @@ import {
   FileText,
   Globe,
   ChevronDown,
-  ChevronRight
+  ChevronRight,
+  Shield,
+  Database,
+  Building,
+  CreditCard,
+  Calendar,
+  Briefcase,
+  FileSpreadsheet,
+  UserCog,
+  Layers
 } from 'lucide-react';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -35,6 +44,18 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const navigation = [
     { name: 'Dashboard', href: '/', icon: BarChart3 },
     { name: 'Panel de Control', href: '/control', icon: Settings },
+    { 
+      name: 'ERP Avanzado', 
+      icon: Database,
+      submenu: [
+        { name: 'Gestión de Proyectos', href: '/erp/projects' },
+        { name: 'Recursos Humanos', href: '/erp/hr' },
+        { name: 'Facturación', href: '/erp/billing' },
+        { name: 'Activos Fijos', href: '/erp/assets' },
+        { name: 'Planificación', href: '/erp/planning' },
+        { name: 'Workflow', href: '/erp/workflow' }
+      ]
+    },
     { name: 'Repartos', href: '/delivery', icon: Truck },
     { name: 'Ventas', href: '/sales', icon: ShoppingCart },
     { name: 'Bodega', href: '/warehouse', icon: Package },
@@ -54,6 +75,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { name: 'Reportes', href: '/reports', icon: FileText },
     { name: 'Catálogo Online', href: '/catalog', icon: Globe },
     { name: 'Expansión', href: '/expansion', icon: TrendingUp },
+    { name: 'SIEM Security', href: '/siem', icon: Shield },
   ];
 
   const isActiveMenu = (item: any) => {
