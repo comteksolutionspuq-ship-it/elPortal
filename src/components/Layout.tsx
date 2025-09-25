@@ -1,0 +1,197 @@
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { 
+  BarChart3, 
+  Truck, 
+  ShoppingCart, 
+  Package, 
+  Calculator, 
+  TrendingUp, 
+  Menu, 
+  X,
+  Store,
+  Settings,
+  Users,
+  UserCheck,
+  ShoppingBag,
+  FileText,
+  Globe,
+  ChevronDown,
+  ChevronRight
+} from 'lucide-react';
+
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [expandedMenus, setExpandedMenus] = useState<{[key: string]: boolean}>({});
+  const location = useLocation();
+
+  const toggleMenu = (menuKey: string) => {
+    setExpandedMenus(prev => ({
+      ...prev,
+      [menuKey]: !prev[menuKey]
+    }));
+  };
+
+  const navigation = [
+    { name: 'Dashboard', href: '/', icon: BarChart3 },
+    { name: 'Panel de Control', href: '/control', icon: Settings },
+    { name: 'Repartos', href: '/delivery', icon: Truck },
+    { name: 'Ventas', href: '/sales', icon: ShoppingCart },
+    { name: 'Bodega', href: '/warehouse', icon: Package },
+    { 
+      name: 'Contabilidad', 
+      icon: Calculator,
+      submenu: [
+        { name: 'Transacciones', href: '/accounting' },
+        { name: 'Planilla de Costos', href: '/accounting/costs' },
+        { name: 'Asignación de Precios', href: '/accounting/pricing' },
+        { name: 'Gestión de Sueldos', href: '/accounting/payroll' }
+      ]
+    },
+    { name: 'Clientes', href: '/customers', icon: Users },
+    { name: 'Proveedores', href: '/suppliers', icon: UserCheck },
+    { name: 'Órdenes de Compra', href: '/purchases', icon: ShoppingBag },
+    { name: 'Reportes', href: '/reports', icon: FileText },
+    { name: 'Catálogo Online', href: '/catalog', icon: Globe },
+    { name: 'Expansión', href: '/expansion', icon: TrendingUp },
+  ];
+
+  const isActiveMenu = (item: any) => {
+    if (item.href) {
+      return location.pathname === item.href;
+    }
+    if (item.submenu) {
+      return item.submenu.some((sub: any) => location.pathname === sub.href);
+    }
+    return false;
+  };
+
+  return (
+    <div className="h-screen bg-gray-50 flex">
+      {/* Mobile sidebar backdrop */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 z-40 bg-gray-600 bg-opacity-75 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:flex lg:flex-col ${
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
+        <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
+          <div className="flex items-center">
+            <Store className="h-8 w-8 text-blue-600" />
+            <span className="ml-2 text-xl font-bold text-gray-900">El Portal</span>
+          </div>
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="lg:hidden text-gray-400 hover:text-gray-600"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+        
+        <nav className="mt-6 flex-1 overflow-y-auto">
+          {navigation.map((item) => {
+            const Icon = item.icon;
+            const isActive = isActiveMenu(item);
+            
+            if (item.submenu) {
+              const isExpanded = expandedMenus[item.name];
+              return (
+                <div key={item.name}>
+                  <button
+                    onClick={() => toggleMenu(item.name)}
+                    className={`w-full flex items-center justify-between px-6 py-3 text-sm font-medium transition-colors duration-200 ${
+                      isActive
+                        ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700'
+                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    }`}
+                  >
+                    <div className="flex items-center">
+                      <Icon className="h-5 w-5 mr-3" />
+                      {item.name}
+                    </div>
+                    {isExpanded ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                  </button>
+                  {isExpanded && (
+                    <div className="bg-gray-50">
+                      {item.submenu.map((subItem: any) => (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.href}
+                          className={`block px-12 py-2 text-sm transition-colors duration-200 ${
+                            location.pathname === subItem.href
+                              ? 'text-blue-700 bg-blue-100'
+                              : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                          }`}
+                          onClick={() => setSidebarOpen(false)}
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            
+            return (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`flex items-center px-6 py-3 text-sm font-medium transition-colors duration-200 ${
+                  isActive
+                    ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                <Icon className="h-5 w-5 mr-3" />
+                {item.name}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
+
+      {/* Main content */}
+      <div className="flex-1 flex flex-col min-w-0">
+        {/* Top bar */}
+        <div className="bg-white shadow-sm border-b border-gray-200 flex-shrink-0">
+          <div className="px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between h-16">
+              <div className="flex items-center">
+                <button
+                  onClick={() => setSidebarOpen(true)}
+                  className="lg:hidden text-gray-400 hover:text-gray-600"
+                >
+                  <Menu className="h-6 w-6" />
+                </button>
+                <h1 className="ml-4 lg:ml-0 text-2xl font-semibold text-gray-900">
+                  Distribuidora El Portal
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <span className="text-sm text-gray-500">Punta Arenas, Chile</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Page content */}
+        <main className="flex-1 overflow-y-auto p-6">
+          {children}
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default Layout;
