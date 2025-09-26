@@ -40,7 +40,7 @@ import SalesPipeline from './pages/crm/SalesPipeline';
 //import CustomerSupport from './pages/crm/CustomerSupport';
 
 // Business Management
-import ProjectManagement from './pages/business/ProjectManagement';
+//import ProjectManagement from './pages/business/ProjectManagement';
 import HumanResources from './pages/business/HumanResources';
 import AssetManagement from './pages/business/AssetManagement';
 import PlanningModule from './pages/business/PlanningModule';
