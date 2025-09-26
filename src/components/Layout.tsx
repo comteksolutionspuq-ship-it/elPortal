@@ -26,7 +26,17 @@ import {
   Briefcase,
   FileSpreadsheet,
   UserCog,
-  Layers
+  Layers,
+  MapPin,
+  Route,
+  Zap,
+  DollarSign,
+  Heart,
+  Eye,
+  Target,
+  Workflow,
+  PieChart,
+  TrendingDown
 } from 'lucide-react';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -44,37 +54,78 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const navigation = [
     { name: 'Dashboard', href: '/', icon: BarChart3 },
     { name: 'Panel de Control', href: '/control', icon: Settings },
+    
+    // Módulos Principales
     { 
-      name: 'ERP Avanzado', 
-      icon: Database,
+      name: 'Logística', 
+      icon: Truck,
       submenu: [
-        { name: 'Gestión de Proyectos', href: '/erp/projects' },
-        { name: 'Recursos Humanos', href: '/erp/hr' },
-        { name: 'Facturación', href: '/erp/billing' },
-        { name: 'Activos Fijos', href: '/erp/assets' },
-        { name: 'Planificación', href: '/erp/planning' },
-        { name: 'Workflow', href: '/erp/workflow' }
+        { name: 'Gestión de Repartos', href: '/logistics/delivery' },
+        { name: 'Planificación de Rutas', href: '/logistics/routes' },
+        { name: 'Gestión de Flota', href: '/logistics/fleet' },
+        { name: 'Centros de Distribución', href: '/logistics/distribution' },
+        { name: 'Tracking en Tiempo Real', href: '/logistics/tracking' }
       ]
     },
-    { name: 'Repartos', href: '/delivery', icon: Truck },
-    { name: 'Ventas', href: '/sales', icon: ShoppingCart },
-    { name: 'Bodega', href: '/warehouse', icon: Package },
+    
     { 
-      name: 'Contabilidad', 
+      name: 'Ventas y Marketing', 
+      icon: ShoppingCart,
+      submenu: [
+        { name: 'Punto de Venta', href: '/sales' },
+        { name: 'Tienda Online', href: '/store' },
+        { name: 'Catálogo Digital', href: '/catalog' },
+        { name: 'Campañas Marketing', href: '/marketing/campaigns' },
+        { name: 'Analytics de Ventas', href: '/sales/analytics' }
+      ]
+    },
+    
+    { name: 'Gestión de Inventario', href: '/warehouse', icon: Package },
+    
+    { 
+      name: 'Contabilidad y Finanzas', 
       icon: Calculator,
       submenu: [
         { name: 'Transacciones', href: '/accounting' },
+        { name: 'Facturación', href: '/accounting/billing' },
         { name: 'Planilla de Costos', href: '/accounting/costs' },
         { name: 'Asignación de Precios', href: '/accounting/pricing' },
-        { name: 'Gestión de Sueldos', href: '/accounting/payroll' }
+        { name: 'Gestión de Sueldos', href: '/accounting/payroll' },
+        { name: 'Análisis Financiero', href: '/finance/analysis' },
+        { name: 'Flujo de Caja', href: '/finance/cashflow' },
+        { name: 'Presupuestos', href: '/finance/budgets' }
       ]
     },
-    { name: 'Clientes', href: '/customers', icon: Users },
+    
+    { 
+      name: 'CRM Avanzado', 
+      icon: Users,
+      submenu: [
+        { name: 'Gestión de Clientes', href: '/crm/customers' },
+        { name: 'Pipeline de Ventas', href: '/crm/pipeline' },
+        { name: 'Seguimiento de Leads', href: '/crm/leads' },
+        { name: 'Análisis de Comportamiento', href: '/crm/behavior' },
+        { name: 'Automatización Marketing', href: '/crm/automation' },
+        { name: 'Soporte al Cliente', href: '/crm/support' }
+      ]
+    },
+    
+    { 
+      name: 'Gestión Empresarial', 
+      icon: Building,
+      submenu: [
+        { name: 'Gestión de Proyectos', href: '/business/projects' },
+        { name: 'Recursos Humanos', href: '/business/hr' },
+        { name: 'Activos Fijos', href: '/business/assets' },
+        { name: 'Planificación Estratégica', href: '/business/planning' },
+        { name: 'Gestión de Workflows', href: '/business/workflow' }
+      ]
+    },
+    
     { name: 'Proveedores', href: '/suppliers', icon: UserCheck },
     { name: 'Órdenes de Compra', href: '/purchases', icon: ShoppingBag },
-    { name: 'Reportes', href: '/reports', icon: FileText },
-    { name: 'Catálogo Online', href: '/catalog', icon: Globe },
-    { name: 'Expansión', href: '/expansion', icon: TrendingUp },
+    { name: 'Reportes y Analytics', href: '/reports', icon: FileText },
+    { name: 'Análisis de Expansión', href: '/expansion', icon: TrendingUp },
     { name: 'SIEM Security', href: '/siem', icon: Shield },
   ];
 
