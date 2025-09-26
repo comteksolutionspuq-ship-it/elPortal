@@ -32,7 +32,7 @@ import FinancialAnalysis from './pages/finance/FinancialAnalysis';
 //import BudgetManagement from './pages/finance/BudgetManagement';
 
 // CRM Advanced
-import CustomerManagement from './pages/crm/CustomerManagement';
+//import CustomerManagement from './pages/crm/CustomerManagement';
 import SalesPipeline from './pages/crm/SalesPipeline';
 import LeadTracking from './pages/crm/LeadTracking';
 import BehaviorAnalysis from './pages/crm/BehaviorAnalysis';
