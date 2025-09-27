@@ -15,7 +15,7 @@ import DistributionCenters from './pages/logistics/DistributionCenters';
 import SalesPortal from './pages/SalesPortal';
 import OnlineStore from './pages/store/OnlineStore';
 import OnlineCatalog from './pages/OnlineCatalog';
-import MarketingCampaigns from './pages/marketing/MarketingCampaigns';
+//import MarketingCampaigns from './pages/marketing/MarketingCampaigns';
 import SalesAnalytics from './pages/sales/SalesAnalytics';
 
 // Inventory
