@@ -45,35 +45,73 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { name: 'Dashboard', href: '/', icon: BarChart3 },
     { name: 'Panel de Control', href: '/control', icon: Settings },
     { 
-      name: 'ERP Avanzado', 
-      icon: Database,
+      name: 'Logística', 
+      icon: Truck,
       submenu: [
-        { name: 'Gestión de Proyectos', href: '/erp/projects' },
-        { name: 'Recursos Humanos', href: '/erp/hr' },
-        { name: 'Facturación', href: '/erp/billing' },
-        { name: 'Activos Fijos', href: '/erp/assets' },
-        { name: 'Planificación', href: '/erp/planning' },
-        { name: 'Workflow', href: '/erp/workflow' }
+        { name: 'Repartos', href: '/delivery' },
+        { name: 'Gestión de Rutas', href: '/logistics/routes' },
+        { name: 'Gestión de Flota', href: '/logistics/fleet' },
+        { name: 'Centros de Distribución', href: '/logistics/distribution' },
+        { name: 'Tracking y Monitoreo', href: '/logistics/tracking' }
       ]
     },
-    { name: 'Repartos', href: '/delivery', icon: Truck },
-    { name: 'Ventas', href: '/sales', icon: ShoppingCart },
+    { 
+      name: 'Ventas y Marketing', 
+      icon: ShoppingCart,
+      submenu: [
+        { name: 'Punto de Venta', href: '/sales' },
+        { name: 'Tienda Online', href: '/store' },
+        { name: 'Catálogo Online', href: '/catalog' },
+        { name: 'Campañas Marketing', href: '/marketing/campaigns' }
+      ]
+    },
     { name: 'Bodega', href: '/warehouse', icon: Package },
     { 
       name: 'Contabilidad', 
       icon: Calculator,
       submenu: [
         { name: 'Transacciones', href: '/accounting' },
+        { name: 'Facturación', href: '/accounting/billing' },
         { name: 'Planilla de Costos', href: '/accounting/costs' },
         { name: 'Asignación de Precios', href: '/accounting/pricing' },
         { name: 'Gestión de Sueldos', href: '/accounting/payroll' }
       ]
     },
+    { 
+      name: 'Finanzas', 
+      icon: DollarSign,
+      submenu: [
+        { name: 'Análisis Financiero', href: '/finance/analysis' },
+        { name: 'Flujo de Caja', href: '/finance/cashflow' },
+        { name: 'Presupuestos', href: '/finance/budgets' },
+        { name: 'Inversiones', href: '/finance/investments' }
+      ]
+    },
+    { 
+      name: 'CRM', 
+      icon: Users,
+      submenu: [
+        { name: 'Pipeline de Ventas', href: '/crm/pipeline' },
+        { name: 'Gestión de Leads', href: '/crm/leads' },
+        { name: 'Análisis de Clientes', href: '/crm/analytics' },
+        { name: 'Automatización', href: '/crm/automation' }
+      ]
+    },
     { name: 'Clientes', href: '/customers', icon: Users },
     { name: 'Proveedores', href: '/suppliers', icon: UserCheck },
     { name: 'Órdenes de Compra', href: '/purchases', icon: ShoppingBag },
+    { 
+      name: 'Gestión Empresarial', 
+      icon: Building,
+      submenu: [
+        { name: 'Gestión de Proyectos', href: '/business/projects' },
+        { name: 'Recursos Humanos', href: '/business/hr' },
+        { name: 'Activos Fijos', href: '/business/assets' },
+        { name: 'Planificación Estratégica', href: '/business/planning' },
+        { name: 'Workflows', href: '/business/workflow' }
+      ]
+    },
     { name: 'Reportes', href: '/reports', icon: FileText },
-    { name: 'Catálogo Online', href: '/catalog', icon: Globe },
     { name: 'Expansión', href: '/expansion', icon: TrendingUp },
     { name: 'SIEM Security', href: '/siem', icon: Shield },
   ];
