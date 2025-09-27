@@ -21,7 +21,7 @@ import RouteManagement from './pages/logistics/RouteManagement';
 import FleetManagement from './pages/logistics/FleetManagement';
 import DistributionCenters from './pages/logistics/DistributionCenters';
 import TrackingMonitoring from './pages/logistics/TrackingMonitoring';
-import MarketingCampaigns from './pages/marketing/MarketingCampaigns';
+//import MarketingCampaigns from './pages/marketing/MarketingCampaigns';
 import BillingModule from './pages/accounting/BillingModule';
 import FinancialAnalysis from './pages/finance/FinancialAnalysis';
 import CashFlow from './pages/finance/CashFlow';
