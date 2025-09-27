@@ -9,7 +9,7 @@ import DeliveryModule from './pages/logistics/DeliveryModule';
 import RouteManagement from './pages/logistics/RouteManagement';
 import FleetManagement from './pages/logistics/FleetManagement';
 import DistributionCenters from './pages/logistics/DistributionCenters';
-import RealTimeTracking from './pages/logistics/RealTimeTracking';
+//import RealTimeTracking from './pages/logistics/RealTimeTracking';
 
 // Sales & Marketing
 import SalesPortal from './pages/SalesPortal';
