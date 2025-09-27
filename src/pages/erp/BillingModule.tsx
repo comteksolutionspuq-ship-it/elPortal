@@ -52,6 +52,7 @@ const BillingModule: React.FC = () => {
   ]);
 
   const [showForm, setShowForm] = useState(false);
+  const [selectedInvoice, setSelectedInvoice] = useState<string | null>(null);
   const [newInvoice, setNewInvoice] = useState({
     customerId: '',
     customerName: '',
