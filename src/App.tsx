@@ -9,14 +9,14 @@ import DeliveryModule from './pages/logistics/DeliveryModule';
 import RouteManagement from './pages/logistics/RouteManagement';
 import FleetManagement from './pages/logistics/FleetManagement';
 import DistributionCenters from './pages/logistics/DistributionCenters';
-//import RealTimeTracking from './pages/logistics/RealTimeTracking';
+import RealTimeTracking from './pages/logistics/RealTimeTracking';
 
 // Sales & Marketing
 import SalesPortal from './pages/SalesPortal';
 import OnlineStore from './pages/store/OnlineStore';
 import OnlineCatalog from './pages/OnlineCatalog';
-//import MarketingCampaigns from './pages/marketing/MarketingCampaigns';
-//import SalesAnalytics from './pages/sales/SalesAnalytics';
+import MarketingCampaigns from './pages/marketing/MarketingCampaigns';
+import SalesAnalytics from './pages/sales/SalesAnalytics';
 
 // Inventory
 import Warehouse from './pages/Warehouse';
@@ -28,19 +28,19 @@ import CostSheet from './pages/CostSheet';
 import PricingSheet from './pages/PricingSheet';
 import PayrollManagement from './pages/PayrollManagement';
 import FinancialAnalysis from './pages/finance/FinancialAnalysis';
-//import CashFlowManagement from './pages/finance/CashFlowManagement';
-//import BudgetManagement from './pages/finance/BudgetManagement';
+import CashFlowManagement from './pages/finance/CashFlowManagement';
+import BudgetManagement from './pages/finance/BudgetManagement';
 
 // CRM Advanced
-//import CustomerManagement from './pages/crm/CustomerManagement';
+import CustomerManagement from './pages/crm/CustomerManagement';
 import SalesPipeline from './pages/crm/SalesPipeline';
-//import LeadTracking from './pages/crm/LeadTracking';
-//import BehaviorAnalysis from './pages/crm/BehaviorAnalysis';
-//import MarketingAutomation from './pages/crm/MarketingAutomation';
-//import CustomerSupport from './pages/crm/CustomerSupport';
+import LeadTracking from './pages/crm/LeadTracking';
+import BehaviorAnalysis from './pages/crm/BehaviorAnalysis';
+import MarketingAutomation from './pages/crm/MarketingAutomation';
+import CustomerSupport from './pages/crm/CustomerSupport';
 
 // Business Management
-//import ProjectManagement from './pages/business/ProjectManagement';
+import ProjectManagement from './pages/business/ProjectManagement';
 import HumanResources from './pages/business/HumanResources';
 import AssetManagement from './pages/business/AssetManagement';
 import PlanningModule from './pages/business/PlanningModule';
