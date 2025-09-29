@@ -26,7 +26,8 @@ import {
   Briefcase,
   FileSpreadsheet,
   UserCog,
-  Layers
+  Layers,
+  DollarSign
 } from 'lucide-react';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
