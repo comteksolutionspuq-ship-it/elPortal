@@ -254,4 +254,4 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   );
 };
 
-export default Layoumt;
+export default Layout;
